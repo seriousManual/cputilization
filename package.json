@@ -1,0 +1,24 @@
+{
+  "name": "cputilization",
+  "version": "0.0.0",
+  "description": "cpu utilization",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zaphod1984/cputilization.git"
+  },
+  "keywords": [
+    "cpu"
+  ],
+  "author": "Manuel Ernst <zaphod84@gmx.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zaphod1984/cputilization/issues"
+  }
+}
