@@ -1,5 +1,9 @@
-var sampler = require('../lib/sampler');
+var sampler = require('../');
 
-sampler({}, function(error, sample) {
+sampler({timeout: 2000}, function(error, sample) {
+    console.log( sample.percentageBusy() );
+});
+
+sampler(function(error, sample) {
     console.log( sample.percentageBusy() );
 });
