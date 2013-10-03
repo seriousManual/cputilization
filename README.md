@@ -43,13 +43,14 @@ b.on('sample', function(sample) {
 });
 ````
 
-### stopping sampling
+### stop sampling
 the returned event emitter features a `stop` method, use that one to stop sampling:
 
 ````javascript
 var b = sampler({interval:100});
 
 b.on('sample', function(sample) {
+    //gets executed every 100ms
     console.log( sample.percentageBusy() );
 });
 
