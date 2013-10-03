@@ -1,5 +1,11 @@
 # CPUtilization
 
+[![Build Status](https://travis-ci.org/zaphod1984/cputilization.png)](https://travis-ci.org/zaphod1984/cputilization)
+
+[![NPM](https://nodei.co/npm/cputilization.png)](https://nodei.co/npm/cputilization/)
+
+[![NPM](https://nodei.co/npm-dl/cputilization.png?months=3)](https://nodei.co/npm/cputilization/)
+
 This modules sample the cpu utilization.
 The interface works via callback or event emitter.
 
