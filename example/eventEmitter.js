@@ -11,3 +11,8 @@ var b = sampler({interval:100});
 b.on('sample', function(sample) {
     console.log( 'b', sample.percentageBusy() );
 });
+
+setTimeout(function() {
+    console.log('stopping the eventemitter now.')
+    b.stop();
+}, 2000);
