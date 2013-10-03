@@ -17,6 +17,12 @@
   "keywords": [
     "cpu utilization"
   ],
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "chai": "~1.7.2",
+    "sinon": "~1.7.3",
+    "sandboxed-module": "~0.2.2"
+  },
   "contributors": [
     "Manuel Ernst <zaphod84@gmx.de>"
   ],
