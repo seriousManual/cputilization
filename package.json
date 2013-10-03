@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "./node_modules/.bin/mocha tests"
   },
   "repository": {
     "type": "git",
