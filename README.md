@@ -6,10 +6,18 @@
 
 [![NPM](https://nodei.co/npm-dl/cputilization.png?months=3)](https://nodei.co/npm/cputilization/)
 
+## Installation
+
+```
+npm install cputilization
+```
+
+## Invocation
+
 This modules sample the cpu utilization.
 The interface works via callback or event emitter.
 
-## callback
+### callback interface
 use the callback interface if the cpu usage should be sampled only once:
 
 ````javascript
@@ -27,7 +35,7 @@ sampler({timeout: 2000}, function(error, sample) {
 });
 ````
 
-## event emitter
+### event emitter interface
 if no callback is supplied the cpu utilization will be sampled continously.
 
 a event emitter is returned than, emits a `sample` event every 1000ms
@@ -49,7 +57,7 @@ b.on('sample', function(sample) {
 });
 ````
 
-### stop sampling
+#### stop sampling
 the returned event emitter features a `stop` method, use that one to stop sampling:
 
 ````javascript
