@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "description": "sample your cpu utlization continously",
   "main": "index.js",
+  "author": "Manuel Ernst <zaphod84@gmx.de>",
   "directories": {
     "example": "example",
     "lib": "lib"
@@ -23,8 +24,5 @@
     "sinon": "~1.7.3",
     "sandboxed-module": "~0.2.2"
   },
-  "contributors": [
-    "Manuel Ernst <zaphod84@gmx.de>"
-  ],
   "license": "MIT"
 }
