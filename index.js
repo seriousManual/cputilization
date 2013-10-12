@@ -17,15 +17,28 @@ function getUtilization(options, callback) {
 
         step();
 
-        intervalHandle = setInterval(step, interval);
         sampleEmitter = new SampleEmitter(function() {
-            clearInterval(intervalHandle);
+            clearTimeout(intervalHandle);
         });
+
+        continously(interval);
 
         return sampleEmitter;
     } else {
         step();
         setTimeout(step, options.timeout || 1000);
+    }
+
+    function continously(interval) {
+        function runner() {
+            var duration = interval - ((new Date()).getMilliseconds() % interval);
+
+            step();
+
+            intervalHandle = setTimeout(runner, duration);
+        }
+
+        runner();
     }
 
     function step() {
