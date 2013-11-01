@@ -1,8 +1,10 @@
+var Ticker = require('ptic');
+
 var CpuSample = require('./lib/CpuSample');
 var SampleEmitter = require('./lib/SampleEmitter');
 
 function getUtilization(options, callback) {
-    var intervalHandle, sampleEmitter, previous;
+    var sampleEmitter, previous;
 
     if(typeof options === 'function' || typeof callback === 'function') {
         if(!callback) {
@@ -15,30 +17,18 @@ function getUtilization(options, callback) {
     if(!callback) {
         var interval = options.interval || 1000;
 
-        step();
+        var ticker = new Ticker(interval, true);
+
+        ticker.on('tick', step);
 
         sampleEmitter = new SampleEmitter(function() {
-            clearTimeout(intervalHandle);
+            ticker.stop();
         });
-
-        continously(interval);
 
         return sampleEmitter;
     } else {
         step();
         setTimeout(step, options.timeout || 1000);
-    }
-
-    function continously(interval) {
-        function runner() {
-            var duration = interval - ((new Date()).getMilliseconds() % interval);
-
-            step();
-
-            intervalHandle = setTimeout(runner, duration);
-        }
-
-        runner();
     }
 
     function step() {

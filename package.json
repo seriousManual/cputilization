@@ -24,5 +24,8 @@
     "sinon": "~1.7.3",
     "sandboxed-module": "~0.2.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ptic": "0.0.3"
+  }
 }
