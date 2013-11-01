@@ -32,4 +32,26 @@ describe('integration', function() {
         clock.tick(1000);
     });
 
+    it('should tick tick multiple times', function(done) {
+        var cpu = sandboxed.require('../index', {
+            requires: {
+                './lib/CpuSample': util.makeSample(100)
+            }
+        });
+
+        var e = cpu({interval: 100});
+
+        var cb = sinon.spy(function(sample) {
+            expect(sample).to.equal(100);
+        });
+
+        e.on('sample', cb);
+
+        clock.tick(1000);
+
+        expect(cb.callCount).to.equal(9);
+
+        done();
+    });
+
 });
