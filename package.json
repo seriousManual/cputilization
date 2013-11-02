@@ -1,6 +1,6 @@
 {
   "name": "cputilization",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "sample your cpu utlization continously",
   "main": "index.js",
   "author": "Manuel Ernst <zaphod84@gmx.de>",
