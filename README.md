@@ -70,3 +70,16 @@ b.on('sample', function(sample) {
 
 b.stop();
 ````
+
+## CpuSample
+
+Both interface variations return a `CpuSample` object. 
+The following methods are available:
+
+### percentageBusy()
+
+Returns the average CpuUtilization over the specified sampling interval.
+
+### percentageIdle()
+
+Returns the average Cpu Idle percentage of the specified sampling interval.
