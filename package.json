@@ -26,6 +26,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "ptic": "0.0.3"
+    "ptic": "~0.1.0"
   }
 }
