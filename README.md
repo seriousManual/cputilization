@@ -48,14 +48,34 @@ a.on('sample', function(sample) {
 });
 ````
 
-an additional options hash can be provided to specify the interval:
+an additional options hash can be provided:
+
+`interval`: the ticking interval, default: 1000ms
+`autoStart`: automatically start the ticker, default: true
+
 ````javascript
-var b = sampler({interval:100});
+var b = sampler({interval:100, autoStart: false});
 
 b.on('sample', function(sample) {
     console.log( sample.percentageBusy() );
 });
 ````
+
+#### start sampling
+
+if the sampler does not start automatically it can be started via the `start` command:
+
+````javascript
+var b = sampler({autoStart: false, interval:100});
+
+b.on('sample', function(sample) {
+    //gets executed every 100ms
+    console.log( sample.percentageBusy() );
+});
+
+b.start();
+````
+
 
 #### stop sampling
 the returned event emitter features a `stop` method, use that one to stop sampling:

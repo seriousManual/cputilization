@@ -16,12 +16,15 @@ function getUtilization(options, callback) {
 
     if(!callback) {
         var interval = options.interval || 1000;
+        var autoStart = options.autoStart !== undefined ? options.autoStart : true;
 
-        var ticker = new Ticker(interval, true);
+        var ticker = new Ticker(interval, autoStart);
 
         ticker.on('tick', step);
 
         sampleEmitter = new SampleEmitter(function() {
+            ticker.start();
+        }, function() {
             ticker.stop();
         });
 
