@@ -50,8 +50,8 @@ a.on('sample', function(sample) {
 
 an additional options hash can be provided:
 
-`interval`: the ticking interval, default: 1000ms
-`autoStart`: automatically start the ticker, default: true
+- `interval`: the ticking interval, default: 1000ms
+- `autoStart`: automatically start the ticker, default: true
 
 ````javascript
 var b = sampler({interval:100, autoStart: false});
