@@ -27,7 +27,7 @@ sampler(function(error, sample) {
 });
 ````
 
-supply an options hash to specify how long the time interval should be:
+supply an options hash to specify the time interval:
 ````javascript
 sampler({timeout: 2000}, function(error, sample) {
     //returns after 2000ms
