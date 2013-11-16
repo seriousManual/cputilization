@@ -93,7 +93,7 @@ b.stop();
 
 ## CpuSample
 
-On every tick a `CpuSample` object is emitted. 
+An `CpuSample` object is emitted (EventEmitter interface) or returned via tha callback interface.  
 The following methods are available:
 
 ### percentageBusy()
