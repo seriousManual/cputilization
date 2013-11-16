@@ -93,7 +93,7 @@ b.stop();
 
 ## CpuSample
 
-On every tick a `CpuSample` object gets emitted. 
+On every tick a `CpuSample` object is emitted. 
 The following methods are available:
 
 ### percentageBusy()
