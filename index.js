@@ -22,11 +22,7 @@ function getUtilization(options, callback) {
 
         ticker.on('tick', step);
 
-        sampleEmitter = new SampleEmitter(function() {
-            ticker.start();
-        }, function() {
-            ticker.stop();
-        });
+        sampleEmitter = new SampleEmitter(ticker.start.bind(ticker), ticker.stop.bind(ticker));
 
         return sampleEmitter;
     } else {
