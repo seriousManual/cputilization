@@ -21,9 +21,9 @@ The interface works via callback or event emitter.
 use the callback interface if the cpu usage should be sampled only once:
 
 ````javascript
-var sampler = require('cputilization');
+var cpuu = require('cputilization');
 
-sampler(function(error, sample) {
+cpuu(function(error, sample) {
     //returns after 1000ms with the cpu usage of that time interval
     console.log( sample.percentageBusy() );
 });
@@ -31,9 +31,9 @@ sampler(function(error, sample) {
 
 supply an options hash to specify the time interval:
 ````javascript
-var sampler = require('cputilization');
+var cpuu = require('cputilization');
 
-sampler({timeout: 2000}, function(error, sample) {
+cpuu({timeout: 2000}, function(error, sample) {
     //returns after 2000ms
     console.log( sample.percentageBusy() );
 });
@@ -45,9 +45,9 @@ if no callback is supplied the cpu utilization will be sampled continously.
 a event emitter is returned than, emits a `sample` event every 1000ms
 
 ````javascript
-var createSampler = require('cputilization');
+var cpuu = require('cputilization');
 
-var sampler = createSampler();
+var sampler = cpuu();
 
 sampler.on('sample', function(sample) {
     console.log( sample.percentageBusy() );
@@ -60,9 +60,9 @@ an additional options hash can be provided:
 - `autoStart`: automatically start the ticker, default: true
 
 ````javascript
-var createSampler = require('cputilization');
+var cpuu = require('cputilization');
 
-var sampler = createSampler({interval:100, autoStart: false});
+var sampler = cpuu({interval:100, autoStart: false});
 
 sampler.on('sample', function(sample) {
     console.log( sample.percentageBusy() );
@@ -74,9 +74,9 @@ sampler.on('sample', function(sample) {
 if the sampler does not start automatically it can be started via the `start` command:
 
 ````javascript
-var createSampler = require('cputilization');
+var cpuu = require('cputilization');
 
-var sampler = createSampler({autoStart: false, interval:100});
+var sampler = cpuu({autoStart: false, interval:100});
 
 sampler.on('sample', function(sample) {
     //gets executed every 100ms
@@ -91,9 +91,9 @@ sampler.start();
 the returned event emitter features a `stop` method, use that one to stop sampling:
 
 ````javascript
-var createSampler = require('cputilization');
+var cpuu = require('cputilization');
 
-var sampler = createSampler({interval:100});
+var sampler = cpuu({interval:100});
 
 sampler.on('sample', function(sample) {
     //gets executed every 100ms
