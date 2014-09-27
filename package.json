@@ -19,13 +19,13 @@
     "cpu utilization"
   ],
   "devDependencies": {
-    "mocha": "~1.13.0",
-    "chai": "~1.7.2",
-    "sinon": "~1.7.3",
-    "sandboxed-module": "~0.2.2"
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4",
+    "sandboxed-module": "^1.0.1",
+    "sinon": "^1.10.3"
   },
   "license": "MIT",
   "dependencies": {
-    "ptic": "~0.1.0"
+    "ptic": "^0.3.1"
   }
 }
